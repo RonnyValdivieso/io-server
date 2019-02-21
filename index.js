@@ -1,6 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var PORT = process.env.PORT || 9000;
 var array = [];
 
 app.get('/', (req, res) => {
@@ -26,6 +27,6 @@ io.on('connection', (socket) => {
 	});
 });
 
-http.listen(9000, () => {
+http.listen(PORT, () => {
 	console.log('listening on *:9000');
 });
