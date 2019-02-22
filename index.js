@@ -1,6 +1,7 @@
 var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var http = require('http');
+var server = http.createServer(app);
+var io = require('socket.io')(server);
 var PORT = process.env.PORT || 9000;
 var array = [];
 
