@@ -28,6 +28,6 @@ io.on('connection', (socket) => {
 	});
 });
 
-http.listen(PORT, () => {
+server.listen(PORT, () => {
 	console.log('listening on *:9000');
 });
