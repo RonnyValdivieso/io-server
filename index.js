@@ -9,6 +9,11 @@ app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/testNotification', (req, res) => {
+	io.emit('notification', {message: "Test data"});
+	res.send({message: 'notification sent'})
+})
+
 io.on('connection', (socket) => {
 	console.log(socket.id);
 	console.log('a user connected');
