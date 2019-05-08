@@ -15,7 +15,7 @@ app.get('/testNotification', (req, res) => {
 })
 
 app.post('/webhook', (req, res) => {
-	console.log(req.body);
+	console.log(req.resources);
 	res.send({success: true, message: "Ok"});
 })
 
