@@ -14,6 +14,11 @@ app.get('/testNotification', (req, res) => {
 	res.send({message: 'notification sent'})
 })
 
+app.post('/webhook', (req, res) => {
+	console.log(req);
+	res.send({success: true, message: "Ok"});
+})
+
 io.on('connection', (socket) => {
 	console.log(socket.id);
 	console.log('a user connected');
